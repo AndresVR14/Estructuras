@@ -44,3 +44,15 @@ void help(){//Esta función será guardada a la librería "help.h"
 	cout<<"conquita_mas_barata -> calcula la conquista mas barata"<<endl;
 	cout<<"salir -> termina el programa"<<endl;
 }
+
+void verificarcomando(char *argv){
+	if(strcmp(comando,"salir")!=0)
+		if(strcmp(comando,"inicializar")!=0)
+			if(strcmp(comando,"turno ")!=0)
+				if(strcmp(comando,"guardar ")!=0)
+					if(strcmp(comando,"guardar ")!=0)
+						if(strcmp(comando,"costo_conquista")!=0) 
+							if(strcmp(comando,"conquista_mas_barata")!=0)
+								cout<<"comando incorrecto, por favor escriba bien :v"<<endl;
+	
+}
