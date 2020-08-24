@@ -22,5 +22,6 @@ int main(int argc, char *argv[]){
 		}
 	}while(strcmp(comando,"salir")!=0);
 	cout<<"hola"<<endl;
+	//no me aparece el cambio :c
 	return 0;
 }
