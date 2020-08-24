@@ -11,7 +11,7 @@
 using namespace std;
 
 int main(int argc, char *argv[]){
-	
+
 	char *comando = new char [20];
 	strcpy(comando, argv[1]);
 	do{
@@ -22,5 +22,7 @@ int main(int argc, char *argv[]){
 		}
 	}while(strcmp(comando,"salir")!=0);
 	cout<<"hola"<<endl;
+	//hola andres el que viene cada mes
+
 	return 0;
 }
