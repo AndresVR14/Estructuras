@@ -16,18 +16,31 @@ bool verificarComando(char*);
 int main(int argc, char *argv[]){
 	
 	cout<<"\t\t\t\t\t\tRISK++"<<endl;
-	char *comando = new char [20];
-	//cout<<strupr(comando)<<endl;
-	//strcpy(comando, argv[1]);
+	char *comando = new char [40];
 	help();
 	do{
 		cout<<"$";
-		cin.getline(comando, 20);
+		cin.getline(comando, 40);
 		cout<<endl<<"Su comando fue: "<<comando<<endl;
-		for(int i=0; i<argc; i++){
-			cout<<argv[i]<<endl;
+		if(strcmp(comando,"inicializar")==0){
+		}else if(strcmp(comando,"salir")==0){
+			break;
+		}else if(strcmp(comando,"costo_conquista")==0){
+		}else if(strcmp(comando,"conquita_mas_barata")==0){
+		}else{
+			char *coman2 = new char [40];
+			strcpy(coman2, comando);
+			coman2 = strtok(coman2, " ");
+			char *c = strtok(comando, "<");
+			c=strtok(NULL, "<");
+			char *condicion=strtok(c, ">");
+			cout<<coman2<<endl;
+			cout<<condicion<<endl;
+			if(strcmp(coman2,"turno"){
+			}else if(strcmp(coman2,"guardar"){
+			}else if(strcmp(coman2,"guardar_comprimido"){
+			}
 		}
-		cout<<argc<<endl;
 	}while(strcmp(comando,"salir")!=0);
 
 	return 0;
