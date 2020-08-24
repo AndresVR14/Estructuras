@@ -17,29 +17,29 @@ int main(int argc, char *argv[]){
 	
 	cout<<"\t\t\t\t\t\tRISK++"<<endl;
 	char *comando = new char [40];
+	char *coman2 = new char [40];
+	char *p = new char [40];
+	char *c = new char [40];
+	char *condicion = new char [40];
 	help();
 	do{
-		cout<<"$";
-		cin.getline(comando, 40);
-		cout<<endl<<"Su comando fue: "<<comando<<endl;
+		do{
+			cout<<endl<<"$";
+			cin.getline(comando, 40);
+			strcpy(coman2, comando);
+			strcpy(p, comando);
+			coman2 = strtok(coman2, " ");
+			c = strtok(p, "<");
+			c = strtok(NULL, "<");
+			condicion=strtok(c, ">");
+			cout<<endl<<"Su comando fue: "<<comando<<endl;
+		}while(!verificarComando(comando) && !verificarComando(coman2));
 		if(strcmp(comando,"inicializar")==0){
-		}else if(strcmp(comando,"salir")==0){
-			break;
 		}else if(strcmp(comando,"costo_conquista")==0){
 		}else if(strcmp(comando,"conquita_mas_barata")==0){
-		}else{
-			char *coman2 = new char [40];
-			strcpy(coman2, comando);
-			coman2 = strtok(coman2, " ");
-			char *c = strtok(comando, "<");
-			c=strtok(NULL, "<");
-			char *condicion=strtok(c, ">");
-			cout<<coman2<<endl;
-			cout<<condicion<<endl;
-			if(strcmp(coman2,"turno"){
-			}else if(strcmp(coman2,"guardar"){
-			}else if(strcmp(coman2,"guardar_comprimido"){
-			}
+		}else if(strcmp(coman2,"turno")==0){
+		}else if(strcmp(coman2,"guardar")==0){
+		}else if(strcmp(coman2,"guardar_comprimido")==0){
 		}
 	}while(strcmp(comando,"salir")!=0);
 
@@ -58,14 +58,21 @@ void help(){//Esta función será guardada a la librería "help.h"
 	cout<<"salir -> termina el programa"<<endl;
 }
 
-void verificarcomando(char *argv){
-	if(strcmp(comando,"salir")!=0)
-		if(strcmp(comando,"inicializar")!=0)
-			if(strcmp(comando,"turno ")!=0)
-				if(strcmp(comando,"guardar ")!=0)
-					if(strcmp(comando,"guardar ")!=0)
-						if(strcmp(comando,"costo_conquista")!=0) 
-							if(strcmp(comando,"conquista_mas_barata")!=0)
-								cout<<"comando incorrecto, por favor escriba bien :v"<<endl;
-	
+bool verificarComando(char *comando){
+	if(strcmp(comando,"salir")==0){
+		return true;
+	}else if(strcmp(comando,"inicializar")==0){
+		return true;
+	}else if(strcmp(comando,"turno")==0){
+		return true;
+	}else if(strcmp(comando,"guardar")==0){
+		return true;
+	}else if(strcmp(comando,"guardar_comprimido")==0){
+		return true;
+	}else if(strcmp(comando,"costo_conquista")==0){
+		return true;
+	}else if(strcmp(comando,"conquista_mas_barata")==0){
+		return true;
+	}
+	return false;
 }
