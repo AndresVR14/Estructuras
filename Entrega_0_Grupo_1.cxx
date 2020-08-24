@@ -11,27 +11,30 @@
 using namespace std;
 
 void help();
+bool verificarComando(char*);
 
 int main(int argc, char *argv[]){
 	
 	cout<<"\t\t\t\t\t\tRISK++"<<endl;
 	char *comando = new char [20];
 	//cout<<strupr(comando)<<endl;
-	strcpy(comando, argv[1]);
+	//strcpy(comando, argv[1]);
 	help();
 	do{
-		cout<<endl<<"$"<<endl;
-		cout<<"Su comando fue: "<<comando<<endl;
+		cout<<"$";
+		cin.getline(comando, 20);
+		cout<<endl<<"Su comando fue: "<<comando<<endl;
 		for(int i=0; i<argc; i++){
 			cout<<argv[i]<<endl;
 		}
+		cout<<argc<<endl;
 	}while(strcmp(comando,"salir")!=0);
 
 	return 0;
 }
 
 void help(){//Esta función será guardada a la librería "help.h"
-	cout<<"\t\t\t\t\tHELP!"<<endl;
+	cout<<"\t\t\t\t\t\tHELP!"<<endl;
 	cout<<"Para obtener mas informacion acerca de un comando especifico, escriba HELP seguido del nombre de comando"<<endl;
 	cout<<"inicializar -> inicia el juego"<<endl;
 	cout<<"turno <id_jugador> -> inicia el turno del jugador indicado"<<endl;
