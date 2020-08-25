@@ -21,7 +21,6 @@ int main(int argc, char *argv[]){
 	char *p = new char [40];
 	char *c = new char [40];
 	char *condicion = new char [40];
-	help();
 	do{
 		do{
 			cout<<endl<<"$";
@@ -34,7 +33,9 @@ int main(int argc, char *argv[]){
 			condicion=strtok(c, ">");
 			cout<<endl<<"Su comando fue: "<<comando<<endl;
 		}while(!verificarComando(comando) && !verificarComando(coman2));
-		if(strcmp(comando,"inicializar")==0){
+		if(strcmp(comando, "help"){
+			help();
+		}else if(strcmp(comando,"inicializar")==0){
 		}else if(strcmp(comando,"costo_conquista")==0){
 		}else if(strcmp(comando,"conquita_mas_barata")==0){
 		}else if(strcmp(coman2,"turno")==0){
