@@ -12,6 +12,7 @@ using namespace std;
 
 void help();
 bool verificarComando(char*);
+void help(char*);
 
 int main(int argc, char *argv[]){
 	
@@ -50,7 +51,7 @@ int main(int argc, char *argv[]){
 			if(ayuda==NULL){
 				help();
 			}else{
-				
+				help(ayuda);
 			}
 		}else if(strcmp(comando,"inicializar")==0){
 		}else if(strcmp(comando,"costo_conquista")==0){
@@ -98,4 +99,22 @@ bool verificarComando(char *comando){
 		return true;
 	}
 	return false;
+}
+void help(char *comando){
+	if(strcmp(comando,"salir")==0){
+		cout<<"Comando que al utilizarse termina el programa"<<endl;
+	}else if(strcmp(comando,"inicializar")==0){
+		cout<<"Comando que al utilizarse establece las condiciones necesarias para iniciar el juego, asimismo, crea el mapa, asigna a cada jugador sus cartas, tropas y territorios"<<endl;
+	}else if(strcmp(comando,"turno")==0){
+		cout<<"Comando que al utilizarse realiza las operaciones descritas dentro del turno del jugador (obtener nuevas unidades, atacar, fortificar)"<<endl;
+	}else if(strcmp(comando,"guardar")==0){
+		cout<<"Comando que al utilizarse guarda el estado actual del juego en un archivo de texto(.txt)"<<endl;
+	}else if(strcmp(comando,"guardar_comprimido")==0){
+		cout<<"Comando que al utilizarse guarda el estado actual del juego en un archivo binario(.bin)"<<endl;
+	}else if(strcmp(comando,"costo_conquista")==0){
+		cout<<"Comando que al utilizarse muestra en pantalla el calculo del costo y la secuencia del territorio para contolar conquistado"<<endl;
+	}else if(strcmp(comando,"conquista_mas_barata")==0){
+		cout<<"Comando que al utilizarse muestra en pantalla cual es el territorio que contiene menor unidades de tropas y asi poder evitar bastantes perdidas de tropas al atacar"<<endl;
+	}
+	
 }
