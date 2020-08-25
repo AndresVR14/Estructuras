@@ -41,6 +41,14 @@ int main(int argc, char *argv[]){
 					break;
 				}
 			}
+			if(strcmp(coman2, "inicializar")==0){
+				c = strtok(p, " ");
+				c = strtok(NULL, " ");
+				strcpy(ayuda, c);
+				if(!verificarComando(ayuda)){
+					break;
+				}
+			}
 			c = strtok(p, "<");
 			c = strtok(NULL, "<");
 			condicion=strtok(c, ">");
