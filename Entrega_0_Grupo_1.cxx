@@ -33,7 +33,7 @@ int main(int argc, char *argv[]){
 			condicion=strtok(c, ">");
 			cout<<endl<<"Su comando fue: "<<comando<<endl;
 		}while(!verificarComando(comando) && !verificarComando(coman2));
-		if(strcmp(comando, "help"){
+		if(strcmp(comando, "help")==0){
 			help();
 		}else if(strcmp(comando,"inicializar")==0){
 		}else if(strcmp(comando,"costo_conquista")==0){
